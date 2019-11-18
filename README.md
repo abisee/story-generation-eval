@@ -77,7 +77,7 @@ Run
 ```
 jupyter notebook
 ``` 
-to open `analyze.ipynb`. This notebook loads the data in `data/stories_metric_annotated` and `data/teacherforcing`, and produces the plots in the paper. The notebook also allows you to browse the generated stories.
+to open `analyze.ipynb`. This notebook loads the data in `data/stories_metric_annotated` and `data/teacherforcing`, and produces the plots in the paper. The notebook also allows you to browse the generated stories. You can see an in-browser preview [here](https://github.com/abisee/story-generation-eval/blob/master/analyze.ipynb).
 
 ## Prompt ranking accuracy code
 
