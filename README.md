@@ -79,6 +79,10 @@ jupyter notebook
 ``` 
 to open `analyze.ipynb`. This notebook loads the data in `data/stories_metric_annotated` and `data/teacherforcing`, and produces the plots in the paper. The notebook also allows you to browse the generated stories.
 
+## Prompt ranking code
+
+Our code to compute prompt ranking accuracy on the Fusion Model is visible in this [pull request](https://github.com/pytorch/fairseq/pull/733). The prompt ranking code for GPT2-117 is similar.
+
 ## Citation
 
 If you use this code, please cite our paper:
