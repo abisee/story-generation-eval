@@ -4,7 +4,12 @@ This repo contains code to download the generated text data, compute the automat
 
 ## Download the data
 
-Download and unzip [this file](https://nlp.stanford.edu/data/gpt_analysis/data.zip) (1.1GB) to make a directory called `data` in `story-generation-eval`.
+Download and unzip [this file](https://nlp.stanford.edu/data/gpt_analysis/data.zip) (1.1GB) to make a directory called `data`:
+```
+cd story-generation-eval
+wget https://nlp.stanford.edu/data/gpt_analysis/data.zip
+unzip data.zip
+```
 
 ## About the model-generated stories (unannotated)
 
@@ -42,7 +47,12 @@ python spacy_annotate.py
 ```
 This will take each story in `data/stories_unannotated` and save a Spacy encoding of its prompt and story in `data/stories_spacy_annotated`.
 
-The Spacy annotation can take a long time, so if you want to download the precomputed ones for our generated stories, you can do so [here]() (XGB). Unzip it into the `data` dir to create a new directory called `data/stories_spacy_annotated`.
+The Spacy annotation can take a long time, so if you want to download the precomputed ones for our generated stories, you can do so [here]() (XGB). Unzip it into the `data` dir to create a new directory called `stories_spacy_annotated`:
+```
+cd data
+wget https://nlp.stanford.edu/data/gpt_analysis/stories_spacy_annotated.zip
+unzip stories_spacy_annotated.zip
+```
 
 ### Step 2: Other prerequisites
 
