@@ -18,8 +18,8 @@ In `data/stories_unannotated`, each json file contains a dictionary mapping from
 Each story is represented by a dictionary containing the following:
 - `prompt_text`, `story_text`: string. The text of the prompt/story.
 - `prompt_tokens`, `story_tokens`: list of strings. The model-level tokens in the prompt/story. This is word-level for Fusion and subword-level for GPT2.
-- (Not for human stories) `gen_probs_orig`: list of floats, same length as story_tokens. The model's probability for each of the generated tokens. 
-- (Not for human stories) `vocab_entropy_orig`: list of floats, same length as story_tokens. The entropy of the model's vocabulary distribution for each step.
+- `gen_probs_orig`: list of floats, same length as story_tokens. The model's probability for each of the generated tokens. Not included for the human-written stories.
+- `vocab_entropy_orig`: list of floats, same length as story_tokens. The entropy of the model's vocabulary distribution for each step. Not included for the human-written stories.
 
 If you want to generate the unannotated story files yourself:
 - The code we used to generate text from the Fusion Model can be found in [fairseq](https://github.com/pytorch/fairseq/tree/master/examples/stories).
