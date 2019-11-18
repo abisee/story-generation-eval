@@ -46,7 +46,7 @@ The Spacy annotation can take a long time, so if you want to download the precom
 
 ### Step 2: Other prerequisites
 
-Our annotation script additionally uses these three files:
+Note that our annotation script additionally uses these three files:
 - `data/arora_sentence_embedder.pkl`: This is needed to compute the Arora sentence embeddings for the story-prompt similarity metric. To see how it was produced, follow the instructions in `make_arora_sent_embedder.py`.
 - `data/unigram_probdist.json`: This is needed to compute the mean log unigram probability metric. It was computed by iterating through the WritingPrompts training set and counting the frequency of each unigram.
 - `data/concreteness.csv`: This is needed to compute the mean noun and verb concreteness metrics. It is from the paper _[Concreteness ratings for 40 thousand generally known English word lemmas](https://link.springer.com/article/10.3758/s13428-013-0403-5)_.
