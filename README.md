@@ -69,6 +69,8 @@ python metrics_annotate.py
 ```
 This will take each story in `data/stories_unannotated`, load its Spacy encoding in `data/stories_spacy_annotated`, and save a metric-annotated version in `data/stories_metric_annotated`.
 
+Note that annotating the first file takes the longest because there are various packages and data that need to be loaded on the first turn.
+
 ## Analyzing the metric annotations
 
 Run 
