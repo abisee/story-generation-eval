@@ -4,7 +4,12 @@ This repo contains code to download the generated text data, compute the automat
 
 ## Download the data
 
-Download and unzip [this file](https://nlp.stanford.edu/data/gpt_analysis/data.zip) (1.1GB) to make a directory called `data` in `story-generation-eval`.
+Download and unzip [data.zip](https://nlp.stanford.edu/data/gpt_analysis/data.zip) (1.1GB) to make a directory called `data`:
+```
+cd story-generation-eval
+wget https://nlp.stanford.edu/data/gpt_analysis/data.zip
+unzip data.zip
+```
 
 ## About the model-generated stories (unannotated)
 
@@ -13,8 +18,8 @@ In `data/stories_unannotated`, each json file contains a dictionary mapping from
 Each story is represented by a dictionary containing the following:
 - `prompt_text`, `story_text`: string. The text of the prompt/story.
 - `prompt_tokens`, `story_tokens`: list of strings. The model-level tokens in the prompt/story. This is word-level for Fusion and subword-level for GPT2.
-- (Not for human stories) `gen_probs_orig`: list of floats, same length as story_tokens. The model's probability for each of the generated tokens. 
-- (Not for human stories) `vocab_entropy_orig`: list of floats, same length as story_tokens. The entropy of the model's vocabulary distribution for each step.
+- `gen_probs_orig`: list of floats, same length as story_tokens. The model's probability for each of the generated tokens. Not included for the human-written stories.
+- `vocab_entropy_orig`: list of floats, same length as story_tokens. The entropy of the model's vocabulary distribution for each step. Not included for the human-written stories.
 
 If you want to generate the unannotated story files yourself:
 - The code we used to generate text from the Fusion Model can be found in [fairseq](https://github.com/pytorch/fairseq/tree/master/examples/stories).
@@ -42,7 +47,12 @@ python spacy_annotate.py
 ```
 This will take each story in `data/stories_unannotated` and save a Spacy encoding of its prompt and story in `data/stories_spacy_annotated`.
 
-The Spacy annotation can take a long time, so if you want to download the precomputed ones for our generated stories, you can do so [here]() (XGB). Unzip it into the `data` dir to create a new directory called `data/stories_spacy_annotated`.
+The Spacy annotation can take a long time. If you want to download the precomputed ones for our generated stories, you should download [stories_spacy_unannotated.zip](https://nlp.stanford.edu/data/gpt_analysis/stories_spacy_annotated.zip) (14 GB). Unzip it into the `data` dir to create a new directory called `stories_spacy_annotated`:
+```
+cd data
+wget https://nlp.stanford.edu/data/gpt_analysis/stories_spacy_annotated.zip
+unzip stories_spacy_annotated.zip
+```
 
 ### Step 2: Other prerequisites
 
@@ -59,6 +69,8 @@ python metrics_annotate.py
 ```
 This will take each story in `data/stories_unannotated`, load its Spacy encoding in `data/stories_spacy_annotated`, and save a metric-annotated version in `data/stories_metric_annotated`.
 
+Note that annotating the first file takes the longest because there are various packages and data that need to be loaded on the first turn.
+
 ## Analyzing the metric annotations
 
 Run 
@@ -66,6 +78,10 @@ Run
 jupyter notebook
 ``` 
 to open `analyze.ipynb`. This notebook loads the data in `data/stories_metric_annotated` and `data/teacherforcing`, and produces the plots in the paper. The notebook also allows you to browse the generated stories.
+
+## Prompt ranking accuracy code
+
+Our code to compute prompt ranking accuracy on the Fusion Model is visible in this [pull request](https://github.com/pytorch/fairseq/pull/733). The prompt ranking accuracy code for GPT2-117 is similar.
 
 ## Citation
 
