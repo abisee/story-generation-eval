@@ -47,7 +47,7 @@ python spacy_annotate.py
 ```
 This will take each story in `data/stories_unannotated` and save a Spacy encoding of its prompt and story in `data/stories_spacy_annotated`.
 
-The Spacy annotation can take a long time. If you want to download the precomputed ones for our generated stories, you should download [stories_spacy_unannotated.zip](https://nlp.stanford.edu/data/gpt_analysis/stories_spacy_annotated.zip) (14 GB). Unzip it into the `data` dir to create a new directory called `stories_spacy_annotated`:
+The Spacy annotation can take a long time. If you want to download the precomputed ones for our generated stories, you should download [stories_spacy_annotated.zip](https://nlp.stanford.edu/data/gpt_analysis/stories_spacy_annotated.zip) (14 GB). Unzip it into the `data` dir to create a new directory called `stories_spacy_annotated`:
 ```
 cd data
 wget https://nlp.stanford.edu/data/gpt_analysis/stories_spacy_annotated.zip
