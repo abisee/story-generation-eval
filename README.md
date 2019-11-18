@@ -4,7 +4,7 @@ This repo contains code to download the generated text data, compute the automat
 
 ## Download the data
 
-Download and unzip [this file](https://nlp.stanford.edu/data/gpt_analysis/data.zip) (1.1GB) to make a directory called `data` in TODO_nameofrepo.
+Download and unzip [this file](https://nlp.stanford.edu/data/gpt_analysis/data.zip) (1.1GB) to make a directory called `data` in `story-generation-eval`.
 
 ## About the model-generated stories (unannotated)
 
